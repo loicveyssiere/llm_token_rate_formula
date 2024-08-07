@@ -19,7 +19,7 @@ def main():
     parser.add_argument("--loops", default=10, type=int, help="number of loops for performance testing", nargs='?')
     parser.add_argument("--base_url", default="http://localhost:11434", type=str, help="Ollama server url", nargs='?')
     parser.add_argument("--model", default="llama3", type=str, help="The LLM model", nargs='?')
-    parser.add_argument("--output", default="output/", type=str, help="The output path", nargs='?')
+    parser.add_argument("--output", default="output", type=str, help="The output path", nargs='?')
     config = parser.parse_args()
 
     model_info = prepare_ollama(config.base_url, config.model)
@@ -43,9 +43,8 @@ def main():
 
     output["model"] = config.model
     output["results"] = results    
-
-    print(json.dumps(output))
-    with open(f"output/test.json", "w") as file:
+    filename = f"{config.output}/{config.model}.json".replace(":", '.')
+    with open(filename, "w") as file:
         json.dump(output, file, indent=2)
     
     
