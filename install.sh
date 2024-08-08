@@ -42,4 +42,9 @@ curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-contai
 sudo apt-get update
 sudo apt -y install nvidia-container-toolkit
 
+echo "INSTALL Python ..."
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install -y python3.11 python3.11-venv
+
 echo "INSTALLATION done!"
