@@ -1,0 +1,5 @@
+name, short_name,bandwidth_GBs,
+NVIDIA A100 80GB PCIe, GA100, 1996
+Tesla T4, TU104, 320
+Tesla V100-PCIE-16GB, GV100, 897
+Tesla M60, GM204, 160
