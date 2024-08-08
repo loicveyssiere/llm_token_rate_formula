@@ -1,5 +1,14 @@
 # LLM Generation token rate formula
 
+A simple code for testing tokens_seconds ≈ memory_bandwidth / model_vram
+
+## Results
+
+Its seems that the memory-bounded asumption is right for large model and "old" 
+GPU cards.
+
+![graph estimation](results/estimation.png)
+
 ## Requirements
 
 You will need to have access to a machine with an NVIDIA GPU.
@@ -40,3 +49,4 @@ chmod +x run.sh
 sudo docker compose down
 rm ./data/ -rf
 ```
+
